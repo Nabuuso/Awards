@@ -44,3 +44,14 @@
 .faded-content{
     color:#808080;
 }
+.project-link-vote{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+.project-links{
+    color:#050f18;
+    text-decoration:underline;
+    font-weight:bolder;
+}

@@ -100,7 +100,7 @@
     padding-left:1em;
 }
 .blog-profile-icon{
-    width:2em;
+    width:1.5em;
     border-radius:50%;
     margin:0.2em;
 }
@@ -187,4 +187,9 @@
     display:flex;
     width:100%;
     flex-direction:row;
+}
+.user-scores{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
 }

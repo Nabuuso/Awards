@@ -39,13 +39,14 @@ $(document).ready(function(){
     $("#upload-img-btn").click(function(e){
         var data = new FormData()
         data.append("image",$("#imageFile")[0].files[0])
-        data.append("image_name",$("#imageName").val())
-        data.append("image_caption",$("#imageCaption").val())
+        data.append("name",$("#siteName").val())
+        data.append("description",$("#description").val())
         data.append("profile",$("#user").val())
         data.append("csrfmiddlewaretoken","{{ csrf_token }}")
+        data.append("link",$("#link").val())
         $.ajax({
             method:'POST',
-            url:'blog-images',
+            url:'projects',
             data:data,
             processData:false,
             contentType:false,

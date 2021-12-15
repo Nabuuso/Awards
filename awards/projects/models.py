@@ -40,6 +40,7 @@ class Project(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     profile = models.ForeignKey(Profile,on_delete=models.CASCADE,related_name="profile_projects")
+    link = models.URLField()
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now_add=True)
     design_rating = models.IntegerField(default=0)
@@ -47,7 +48,7 @@ class Project(models.Model):
     content_rating = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.image_name
+        return self.name
     def save_image(self,*args,**kwargs):
         super().save(*args,**kwargs)
     def delete_image(self,pk):

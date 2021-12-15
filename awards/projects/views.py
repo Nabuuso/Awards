@@ -9,7 +9,8 @@ from django.contrib import messages
 # Create your views here.
 class DashboardView(View):
     def get(self,request):
-        return render(request,'home/index.html')
+        projects = Project.objects.all()
+        return render(request,'home/index.html',{"projects":projects})
 class LoginView(View):
     def get(self,request):
         return render(request,'authentication/login.html')
@@ -47,8 +48,8 @@ class RegisterView(View):
                 # profile.set_password(password)
                 profile.save()
                 email = EmailMessage(
-                    'InstaBlog Account',
-                    'InstaBlog account created successfully',
+                    'Awards Account',
+                    'Awards account created successfully',
                     'liznabuuso@gmail.com',
                     [email]
                 )
@@ -58,3 +59,24 @@ class RegisterView(View):
                 return JsonResponse({"error":"Username already taken","status":400},status=400)
         else:
             return JsonResponse({"error":"Email already taken","status":400},status=400)
+##PROJECTS
+class ProjectsView(View):
+    def post(self,request):
+        img = request.FILES.get("image")
+        name = request.POST['name']
+        description = request.POST['description']
+        profile = request.POST['profile']
+        link = request.POST['link']
+        # fss = FileSystemStorage()
+        # filename = fss.save(img.name,img)
+        # url = fss.url(filename)
+        project = Project()
+        project.image = img
+        project.name = name
+        project.description = description
+        p = Profile.objects.get(pk=profile)
+        project.profile = p
+        project.link = link
+        project.save_image()
+        # Image.save_image(image=url,image_name=image_name,image_caption=image_caption,profile=profile)
+        return JsonResponse({"success":"Image uploaded successfully","status":201},status=201)

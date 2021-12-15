@@ -24,4 +24,41 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <h5 style="margin-left:2em;"><b>Top Sites</b></h5>
+        </div>
+    </div>
+    <div class="row">
+        {% for project in projects %}
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="text-truncate">{{ project.name }}</h5>
+                        <div style="text-align:justify;">
+                            {{ project.description }}
+                        </div>
+                        <div class="project-link-vote">
+                            <a class="project-links">Vote <i class="fas fa-vote-yea"></i></a>
+                            <a class="project-links" href="{{ project.link }}" target="_blank">Visit site <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <br>
+                        <div class="user-scores">
+                            <div>
+                                {% if comment.profile.profile_photo %}
+                                <img src="{{ project.profile.profile_photo.url }}" class="blog-profile-icon" alt="">
+                                {% else %}
+                                <img src="{% static 'img/user.png' %}" class="blog-profile-icon" alt="">
+                                {% endif %}
+                                <span>{{project.profile.full_name }}</span>
+                            </div>
+                            <span>Score: 0</span>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
