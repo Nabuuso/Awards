@@ -7,5 +7,6 @@ urlpatterns = [
     path('register',csrf_exempt(RegisterView.as_view()),name="register"),
     path('login',LoginView.as_view(),name="login"),
     path('logout',LogoutView.as_view(),name='logout'),
-    path('projects',csrf_exempt(ProjectsView.as_view()),name='projects')
+    path('projects',csrf_exempt(ProjectsView.as_view()),name='projects'),
+    path('rating',csrf_exempt(RatingView.as_view()),name='rating')
 ]

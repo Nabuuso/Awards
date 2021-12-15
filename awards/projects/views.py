@@ -80,3 +80,11 @@ class ProjectsView(View):
         project.save_image()
         # Image.save_image(image=url,image_name=image_name,image_caption=image_caption,profile=profile)
         return JsonResponse({"success":"Image uploaded successfully","status":201},status=201)
+class RatingView(View):
+    def post(self,request):
+        design = request.POST['design']
+        usability = request.POST['usability']
+        content = request.POST['content']
+        project = request.POST['project']
+        profile = request.POST['profile']
+        return JsonResponse({"message":"Rated successfully","status":201},status=201)
