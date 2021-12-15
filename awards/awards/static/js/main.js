@@ -35,4 +35,27 @@ $(document).ready(function(){
             }
         })
     })
+    //UPLOAD IMAGE
+    $("#upload-img-btn").click(function(e){
+        var data = new FormData()
+        data.append("image",$("#imageFile")[0].files[0])
+        data.append("image_name",$("#imageName").val())
+        data.append("image_caption",$("#imageCaption").val())
+        data.append("profile",$("#user").val())
+        data.append("csrfmiddlewaretoken","{{ csrf_token }}")
+        $.ajax({
+            method:'POST',
+            url:'blog-images',
+            data:data,
+            processData:false,
+            contentType:false,
+            mimeType:"multipart/form-data",
+            success: function(response){
+                location.reload()
+            },
+            error: function(response){
+                alert(response.error)
+            }
+        })
+    })
 })

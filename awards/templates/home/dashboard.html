@@ -37,23 +37,28 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">New site</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="mb-3">
-                                            <label for="image_name" class="form-label">Image name</label>
-                                            <input type="text" class="form-control" id="imageName"
-                                                placeholder="Image name">
+                                            <label for="image_name" class="form-label">Site name</label>
+                                            <input type="text" class="form-control" id="siteName"
+                                                placeholder="Site name">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="imageFile" class="form-label">Select image</label>
+                                            <label for="image_name" class="form-label">Site link</label>
+                                            <input type="url" class="form-control" id="link"
+                                                placeholder="Site link">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="imageFile" class="form-label">Site screenshot</label>
                                             <input class="form-control" type="file" id="imageFile">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="imageCaption" class="form-label">Image caption</label>
-                                            <textarea class="form-control" id="imageCaption" rows="3"></textarea>
+                                            <label for="imageCaption" class="form-label">Site description</label>
+                                            <textarea class="form-control" id="description" rows="3"></textarea>
                                         </div>
                                         <input type="hidden" id="user" value="{{request.user.id}}">
                                     </div>
