@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block body_content %}
+{% load static %}
+<!-- <form action="{% url 'logout' %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Signout">
+</form> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="dashboard-navbar">
+                            <div style="flex-grow:1">
+                                <h1 class="logo">Awards</h1>
+                            </div>
+                            <div style="flex-grow:1"><input type="text" class="form-control"
+                                    placeholder="Search............."></div>
+                            <div style="flex-grow:1" class="blog-icons">
+                                <a href="{% url 'dashboard' %}"><i class="fas fa-home icons"></i></a>
+                                <i class="far fa-plus-square icons" data-bs-toggle="modal"
+                                    data-bs-target="#postModal"></i>
+                                    <a href="{% url 'profile' %}"><i class="fas fa-user icons"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="image_name" class="form-label">Image name</label>
+                                            <input type="text" class="form-control" id="imageName"
+                                                placeholder="Image name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="imageFile" class="form-label">Select image</label>
+                                            <input class="form-control" type="file" id="imageFile">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="imageCaption" class="form-label">Image caption</label>
+                                            <textarea class="form-control" id="imageCaption" rows="3"></textarea>
+                                        </div>
+                                        <input type="hidden" id="user" value="{{request.user.id}}">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" id="upload-img-btn">Save
+                                            changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% block dashboard_content %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,143 @@
+.dashboard-navbar{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    line-height:50px;
+    min-height:50px;
+    padding-top:1em;
+}
+.icons{
+    font-size:1.5em;
+    margin:0.3em;
+    cursor:pointer;
+}
+.icons-img{
+    width:1em;
+    margin:0.3em;
+    cursor:pointer;
+    border-radius:50%;
+}
+.blog-icons{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+}
+.blog-image{
+    width:100%;
+}
+.dashboard-card{
+    border:1px solid #d3d3d3;
+    border-radius:2px;
+    margin-top:1em;
+}
+@media only screen and (max-width:698px){
+    
+}
+@media only screen and (min-width:698px){
+    .index-page{
+        display:flex;
+        flex-direction:row;
+        width:100%;
+    }
+    .blog-content{
+        width:80%;
+    }
+    .followers-section{
+        width:20%;
+        min-height:100vh;
+        background-color:#f5f5f5;
+        padding:0.2em;
+    }
+}
+.image-caption{
+    padding-left:1em;
+}
+.blog-profile-icon{
+    width:2em;
+    border-radius:50%;
+    margin:0.2em;
+}
+.blog-profile{
+    padding-left:1em;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+.blog-profile-header{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+.profile-ellipsis{
+    margin-right:1em;
+    font-size:2em;
+}
+.likes-btn{
+    cursor:pointer;
+}
+.likes-btn:hover{
+    cursor:pointer;
+}
+.image-comments-section{
+    padding-left:1em;
+    display:flex;
+    flex-direction:row;
+    display:none;
+}
+.view-comments{
+    cursor:pointer;
+    font-weight:bolder;
+}
+.comments-comments{
+    display:flex;
+    flex-direction:column;
+    padding-bottom:0.3em;
+}
+.side-profile-icon{
+    width:4em;
+    border-radius:50%;
+}
+.user-profile-content{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+.side-profile{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+.side-profile-details{
+    display:flex;
+    flex-direction:column;
+}
+.side-follower-icon{
+    width:2em;
+    border-radius:50%;
+}
+.user-followers-content{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+.single-follower-content{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+.profile-user{
+    width:7em;
+    border-radius:50%;
+    margin:2em;
+}
+.profile-page-top{
+    display:flex;
+    width:100%;
+    flex-direction:row;
+}
