@@ -193,3 +193,6 @@
     flex-direction:row;
     justify-content:space-between;
 }
+.slider.slider-horizontal{
+    width:100%;
+}

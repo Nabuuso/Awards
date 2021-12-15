@@ -55,3 +55,6 @@
     text-decoration:underline;
     font-weight:bolder;
 }
+.project-links:hover{
+    cursor:pointer;
+}

@@ -40,7 +40,7 @@
                             {{ project.description }}
                         </div>
                         <div class="project-link-vote">
-                            <a class="project-links">Vote <i class="fas fa-vote-yea"></i></a>
+                            <a class="project-links" data-bs-toggle="modal" data-bs-target="#voteModal">Vote <i class="fas fa-vote-yea"></i></a>
                             <a class="project-links" href="{{ project.link }}" target="_blank">Visit site <i class="fas fa-external-link-alt"></i></a>
                         </div>
                         <br>
@@ -61,4 +61,41 @@
             </div>
         {% endfor %}
     </div>
+    <div class="modal fade" id="voteModal" tabindex="-1" aria-labelledby="voteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rate site</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3" style="width:100%;">
+                    <label for="image_name" class="form-label">Design rating</label><br>
+                    <input id="design" class="form-control" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0"/><br>
+<span id="designCurrentSliderValLabel">Value: <span id="designSliderVal">0</span></span>
+                </div>
+                <div class="mb-3">
+                    <label for="image_name" class="form-label">Usability rating</label><br>
+                    <input id="usability" class="form-control" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0"/><br>
+    <span id="usabilityCurrentSliderValLabel">Value: <span id="usabilitySliderVal">0</span></span>
+                </div>
+                <div class="mb-3">
+                    <label for="image_name" class="form-label">Content rating</label><br>
+                    <input id="content" class="form-control" type="text" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="0"/><br>
+    <span id="contentCurrentSliderValLabel">Value: <span id="contentSliderVal">0</span></span>
+                </div>
+                <input type="hidden" id="user" value="{{request.user.id}}">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="upload-img-btn">Save
+                    changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

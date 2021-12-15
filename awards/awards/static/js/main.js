@@ -59,4 +59,20 @@ $(document).ready(function(){
             }
         })
     })
+    //SLIDERS
+    $("#design").slider();
+    $("#design").on("slide", function(slideEvt) {
+        $("#designSliderVal").text(slideEvt.value);
+    });
+    //USABILITY
+    $("#usability").slider();
+    $("#usability").on("slide", function(slideEvt) {
+        $("#usabilitySliderVal").text(slideEvt.value);
+    });
+    //CONTENT
+    $("#content").slider();
+    $("#content").on("slide", function(slideEvt) {
+        $("#contentSliderVal").text(slideEvt.value);
+    });
+
 })
