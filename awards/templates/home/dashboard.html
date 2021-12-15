@@ -1,14 +1,10 @@
 {% extends 'base.html' %}
 {% block body_content %}
 {% load static %}
-<!-- <form action="{% url 'logout' %}" method="POST">
-    {% csrf_token %}
-    <input type="submit" value="Signout">
-</form> -->
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col">
                         <div class="dashboard-navbar">
@@ -18,10 +14,11 @@
                             <div style="flex-grow:1"><input type="text" class="form-control"
                                     placeholder="Search............."></div>
                             <div style="flex-grow:1" class="blog-icons">
-                                <a href="{% url 'dashboard' %}"><i class="fas fa-home icons"></i></a>
-                                <i class="far fa-plus-square icons" data-bs-toggle="modal"
-                                    data-bs-target="#postModal"></i>
-                                    <a href="{% url 'profile' %}"><i class="fas fa-user icons"></i></a>
+                                <a href="">Profile</a>
+                                <a href="">Login</a>
+                                <a href="">Logout</a>
+                                <a href="">Register</a>
+                                <a href="" style="background-color:#050f18;color:#FFFFFF;font-weight:bolder;">Submit site</a>
                             </div>
                         </div>
                     </div>

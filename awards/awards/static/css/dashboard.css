@@ -22,6 +22,12 @@
     flex-direction:row;
     justify-content:flex-end;
 }
+.blog-icons a{
+    padding:3px;
+    text-decoration:none;
+    color:#050f18;
+    font-size:1em;
+}
 .blog-image{
     width:100%;
 }
