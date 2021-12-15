@@ -1,17 +1,17 @@
 {% extends 'authentication/base_authentication.html' %}
 {% block child_content %}
 {% load static %}
-<div class="login-section">
-    <div class="container">
+<div class="login-section" style="min-width:40%;">
+    <div class="container-fluid">
         <div class="row">
             <div class="col login-content">
                 <h4>Registration</h4>
-                <h1 class="logo">Insta Blog</h1>
+                <h1 class="logo">Awards</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col login-content">
-                <form>
+            <div class="col login-content" style="width:100%;">
+                <form style="width:100%;">
                     <!-- <div class="alert alert-danger" id="register-alert"></div> -->
                     <div>
                         <label for="fullName" class="form-label">Full name</label>
@@ -44,6 +44,12 @@
                             <input type="password" class="form-control" placeholder="Password" aria-label="password"
                                 aria-describedby="password" id="password">
                         </div>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            <label for="bio" class="form-label">Bio</label>
+                            <textarea class="form-control" id="bio" rows="3"></textarea>
+                          </div>
                     </div>
                     <button type="button" class="btn btn-primary form-control" id="registerBtn">Register</button>
                     <br><br>

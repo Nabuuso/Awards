@@ -7,7 +7,9 @@ $(document).ready(function(){
             email: $("#email").val(),
             password: $("#password").val(),
             username: $("#username").val(),
+            bio:$("#bio").val()
         }
+        console.log(body)
         $.ajax({
             method:'POST',
             url:'register',

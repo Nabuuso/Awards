@@ -22,7 +22,7 @@
                                     <a href="{% url 'login' %}">Login</a>
                                 {% endif %}
                                 {% if request.user.is_authenticated %}
-                                    <a href="" style="background-color:#050f18;color:#FFFFFF;font-weight:bolder;">Submit site</a>
+                                    <a href="" style="background-color:#050f18;color:#FFFFFF;font-weight:bolder;" data-bs-toggle="modal" data-bs-target="#postModal">Submit site</a>
                                 {% endif %}
                             </div>
                         </div>

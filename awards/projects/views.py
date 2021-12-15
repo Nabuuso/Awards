@@ -20,7 +20,7 @@ class LoginView(View):
             user = auth.authenticate(email=email,password=password)
             if user:
                 auth.login(request,user)
-                return redirect('/dashboard')
+                return redirect('/')
             else:
                 messages.error(request,'Invalid login')
                 return render(request,'authentication/login.html')
@@ -40,10 +40,10 @@ class RegisterView(View):
         email = request.POST['email']
         full_name = request.POST['full_name']
         password = request.POST['password']
+        bio = request.POST['bio']
         if not Profile.objects.filter(username=username).exists():
             if not Profile.objects.filter(email=email).exists():
-                profile = Profile.objects.create_user(username=username,email=email,password=password,full_name=full_name)
-                print(profile)
+                profile = Profile.objects.create_user(username=username,email=email,password=password,full_name=full_name,bio=bio)
                 # profile.set_password(password)
                 profile.save()
                 email = EmailMessage(
