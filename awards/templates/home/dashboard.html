@@ -15,7 +15,7 @@
                                     placeholder="Search............."></div>
                             <div style="flex-grow:1" class="blog-icons">
                                 {% if request.user.is_authenticated %}
-                                    <a href="">Profile</a>
+                                    <a href="{% url 'profile' %}">Profile</a>
                                     <form action="{% url 'logout' %}" method="POST">
                                         {% csrf_token %}
                                         <button type="submit" class="btn btn-outline-danger" style="margin:3px;">
@@ -23,8 +23,10 @@
                                         </button>
                                     </form>
                                 {% else %}
+                                    <a href="" class="not-logged-in">Profile</a>
                                     <a href="{% url 'register' %}">Register</a>
                                     <a href="{% url 'login' %}">Login</a>
+                                    <a href="" class="not-logged-in" style="background-color:#050f18;color:#FFFFFF;font-weight:bolder;">Submit site</a>
                                 {% endif %}
                                 {% if request.user.is_authenticated %}
                                     <a href="" style="background-color:#050f18;color:#FFFFFF;font-weight:bolder;" data-bs-toggle="modal" data-bs-target="#postModal">Submit site</a>

@@ -90,3 +90,8 @@ class RatingView(View):
         rating = Rating(design_rating=design,usability_rating=usability,content_rating=content,project_id=project,profile_id=profile)
         rating.save()
         return JsonResponse({"message":"Rated successfully","status":201},status=201)
+##USERS
+class ProfilesView(View):
+    def get(self,request):
+        projects = Project.objects.filter(profile=request.user)
+        return render(request,'home/profile.html',{"projects":projects})

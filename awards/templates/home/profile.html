@@ -1,0 +1,81 @@
+{% extends 'home/dashboard.html' %}
+{% block dashboard_content %}
+{% load static %}
+{% load mathfilters %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="profile-page-top">
+                {% if request.user.profile_phototo %}
+                <img src="{{ request.user.profile_photo.url }}" class="profile-user" alt="">
+                {% else %}
+                <img src="{% static 'img/user.png' %}" class="profile-user" alt="">
+                {% endif %}
+                <div class="side-profile-details" style="min-width:60%;">
+                    <h3><b>{{ request.user.username }}</b></h3>
+                    <h4 class="faded-content">{{ request.user.full_name}}</h4>
+                    <div class="row">
+                        <!-- <div class="col-4">
+                            <p><b>{{ request.user.profile_images.count }}</b> Posts</p>
+                        </div>
+                        <div class="col-4">
+                            <p><b>{{ request.user.users_follower.count }}</b> Followers</p>
+                        </div>
+                        <div class="col-4">
+                            <p><b>{{ following }}</b> Following</p>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-12">
+            <h4 class="faded-content"><b>Bio</b></h4>
+            {{ request.user.bio }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h4 class="faded-content"><b>MY PROJECTS</b></h4>
+        </div>
+        {% for project in projects %}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <img src="{{ project.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="text-truncate">{{ project.name }}</h5>
+                    <div style="text-align:justify;">
+                        {{ project.description }}
+                    </div>
+                    <div class="project-link-vote">
+                        <a class="project-links vote-btn" data-project="{{project.id }}" data-user="{{request.user.id}}">Vote <i
+                                class="fas fa-vote-yea"></i></a>
+                        <a class="project-links" href="{{ project.link }}" target="_blank">Visit site <i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <br>
+                    <div class="user-scores">
+                        <div>
+                            {% if comment.profile.profile_photo %}
+                            <img src="{{ project.profile.profile_photo.url }}" class="blog-profile-icon" alt="">
+                            {% else %}
+                            <img src="{% static 'img/user.png' %}" class="blog-profile-icon" alt="">
+                            {% endif %}
+                            <span>{{project.profile.full_name }}</span>
+                        </div>
+                    </div>
+                    <div style="text-align:right;">
+                        <span>
+                           {% if project.total_raters > 0%}
+                                <b>D:</b>{{ project.design_rating|div:project.total_raters}} 
+                                &nbsp; <b>U:</b>{{ project.usability_rating|div:project.total_raters}} &nbsp; <b>C:</b>{{ project.content_rating|div:project.total_raters}} &nbsp; <b>AVG:</b> {{ project.design_rating|add:project.usability_rating|add:project.content_rating}}
+                                {% endif %}
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
