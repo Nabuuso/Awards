@@ -43,10 +43,10 @@ Link https://github.com/Nabuuso/Awards/
 
 # Technologies Used
 
-* Python 3.6
-* Django
+* Python-Django
 * Postgresql
-* MDBootstrap
+* MDBootstrap-CSS
+* HTML
 
 
 # AUTHOR
