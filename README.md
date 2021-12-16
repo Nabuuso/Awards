@@ -41,12 +41,16 @@ Link https://github.com/Nabuuso/Awards/
 
 * $ python3 manage.py runserver
 
-# Technologies Used
+# Known Bugs
+Submit button moves to the side when a user with a long username logs in.
 
-* Python-Django
-* Postgresql
-* MDBootstrap-CSS
-* HTML
+
+# Technologies Used
+* Python Django framework 
+* Git and Github were used as my online repositories respectively.
+* I used Heroku as the host of the live site
+* I used Postman in testing the API
+
 
 
 # AUTHOR
