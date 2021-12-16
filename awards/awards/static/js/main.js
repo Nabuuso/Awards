@@ -74,5 +74,33 @@ $(document).ready(function(){
     $("#content").on("slide", function(slideEvt) {
         $("#contentSliderVal").text(slideEvt.value);
     });
+    //DISPLAY MODAL
+    $(".vote-btn").click(function(e){
+        e.preventDefault()
+        let profile = $(this).data("user")
+        let project = $(this).data("project")
+        $("#project-id").val(project)
+        $("#profile-id").val(profile)
+        $("#voteModal").modal('show')
+    })
+    //RATE WEBSITE
+    $("#rate-site-btn").click(function(e){
+        e.preventDefault();
+        let body = {
+            profile:$("#profile-id").val(),
+            project:$("#project-id").val(),
+            content:$("#content").val(),
+            design:$("#design").val(),
+            usability:$("#usability").val()
+        }
+        $.ajax({
+            method:'POST',
+            url:'rating',
+            data:body,
+            success:function(response){
+                location.reload()
+            }
+        })
+    })
 
 })

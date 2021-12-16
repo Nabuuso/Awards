@@ -4,4 +4,4 @@ from projects.models import Rating
 
 @receiver(post_save,sender=Rating)
 def rating_handler(sender,instance,created,*args,**kwargs):
-    pass
+    print("Signal send")

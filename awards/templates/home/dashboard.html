@@ -16,7 +16,12 @@
                             <div style="flex-grow:1" class="blog-icons">
                                 {% if request.user.is_authenticated %}
                                     <a href="">Profile</a>
-                                    <a href="">Logout</a>
+                                    <form action="{% url 'logout' %}" method="POST">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-outline-danger" style="margin:3px;">
+                                            Logout
+                                        </button>
+                                    </form>
                                 {% else %}
                                     <a href="{% url 'register' %}">Register</a>
                                     <a href="{% url 'login' %}">Login</a>

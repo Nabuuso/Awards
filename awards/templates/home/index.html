@@ -41,7 +41,7 @@
                         {{ project.description }}
                     </div>
                     <div class="project-link-vote">
-                        <a class="project-links" data-bs-toggle="modal" data-bs-target="#voteModal">Vote <i
+                        <a class="project-links vote-btn" data-project="{{project.id }}" data-user="{{request.user.id}}">Vote <i
                                 class="fas fa-vote-yea"></i></a>
                         <a class="project-links" href="{{ project.link }}" target="_blank">Visit site <i
                                 class="fas fa-external-link-alt"></i></a>
@@ -73,6 +73,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <input type="hidden" id="project-id">
+                <input type="hidden" id="profile-id">
                 <div class="mb-3" style="width:100%;">
                     <label for="image_name" class="form-label">Design rating</label><br>
                     <input id="design" class="form-control" type="text" data-slider-min="0" data-slider-max="10"
@@ -95,8 +97,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="upload-img-btn">Save
-                    changes</button>
+                <button type="button" class="btn btn-primary" id="rate-site-btn">Rate site</button>
             </div>
         </div>
     </div>

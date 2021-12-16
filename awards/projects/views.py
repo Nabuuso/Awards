@@ -87,4 +87,6 @@ class RatingView(View):
         content = request.POST['content']
         project = request.POST['project']
         profile = request.POST['profile']
+        rating = Rating(design_rating=design,usability_rating=usability,content_rating=content,project_id=project,profile_id=profile)
+        rating.save()
         return JsonResponse({"message":"Rated successfully","status":201},status=201)
