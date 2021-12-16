@@ -6,15 +6,12 @@ This web-app allows a user to create a Profile of Projects that are all under hi
 
 ## User Story
 
-- Users can view different photos. 
-
-- Users can click on a single photo to expand it and also view details of the photo.
-
-- Users can search for different categories of photos.
-
--  Users can copy a link to the photo to share with friends. 
-
--  Users can view photos based on location they were taken. 
+* View posted projects and their details
+* Post a project to be rated/reviewed
+* Rate/ review other users' projects
+* Search for projects 
+* View projects overall score
+* View my profile page
 
 
 # **SETUP/INSTALLATION.**
