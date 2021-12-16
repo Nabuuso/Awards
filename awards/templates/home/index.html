@@ -42,8 +42,13 @@
                         {{ project.description }}
                     </div>
                     <div class="project-link-vote">
+                        {% if request.user.is_authenticated %}
                         <a class="project-links vote-btn" data-project="{{project.id }}" data-user="{{request.user.id}}">Vote <i
                                 class="fas fa-vote-yea"></i></a>
+                        {% else %}
+                        <a class="project-links not-logged-in" data-project="{{project.id }}" data-user="{{request.user.id}}">Vote <i
+                            class="fas fa-vote-yea"></i></a>
+                        {% endif %}
                         <a class="project-links" href="{{ project.link }}" target="_blank">Visit site <i
                                 class="fas fa-external-link-alt"></i></a>
                     </div>

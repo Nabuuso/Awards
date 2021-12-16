@@ -103,5 +103,7 @@ $(document).ready(function(){
             }
         })
     })
-
+    $(".not-logged-in").click(function(e){
+        alert("Login to continue")
+    })
 })
