@@ -16,6 +16,7 @@ This web-app allows a user to create a Profile of Projects that are all under hi
 
 # **SETUP/INSTALLATION.**
 ## Prerequisites
+Install the following; 
 
 - Python3.8
 
