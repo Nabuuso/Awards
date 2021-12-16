@@ -5,7 +5,8 @@ from . models import *
 from django.core.mail import EmailMessage
 from django.contrib import auth
 from django.contrib import messages
-
+import json
+from django.http import JsonResponse
 # Create your views here.
 class DashboardView(View):
     def get(self,request):
@@ -95,3 +96,10 @@ class ProfilesView(View):
     def get(self,request):
         projects = Project.objects.filter(profile=request.user)
         return render(request,'home/profile.html',{"projects":projects})
+###SEARCH PROJECTS
+class SearchProject(View):
+    def post(self,request):
+        search_str = json.loads(request.body).get('searchText')
+        projects = Project.filter(name__icontains=search_str) | Project.filter(design_rating__icontains=search_str) | Project.filter(usability_rating__icontains=search_str) | Project.filter(profile__full_name__icontains=search_str) 
+        data = projects.values()
+        return JsonResponse(list(data),safe=False)

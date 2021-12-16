@@ -106,4 +106,8 @@ $(document).ready(function(){
     $(".not-logged-in").click(function(e){
         alert("Login to continue")
     })
+    $("#searchProjects").keyup(function(e){
+        let value = $(this).val()
+        
+    })
 })
