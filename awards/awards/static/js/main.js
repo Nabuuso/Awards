@@ -98,6 +98,7 @@ $(document).ready(function(){
             url:'rating',
             data:body,
             success:function(response){
+                alert('Site rated successfully')
                 location.reload()
             }
         })

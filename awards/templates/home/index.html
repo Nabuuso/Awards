@@ -1,6 +1,7 @@
 {% extends 'home/dashboard.html' %}
 {% block dashboard_content %}
 {% load static %}
+{% load mathfilters %}
 <div class="row">
     <div class="col dashboard-banner">
         <div class="banner-section">
@@ -56,9 +57,15 @@
                             {% endif %}
                             <span>{{project.profile.full_name }}</span>
                         </div>
-                        <span>Score: 0</span>
                     </div>
-
+                    <div style="text-align:right;">
+                        <span>
+                           {% if project.total_raters > 0%}
+                                <b>D:</b>{{ project.design_rating|div:project.total_raters}} 
+                                &nbsp; <b>U:</b>{{ project.usability_rating|div:project.total_raters}} &nbsp; <b>C:</b>{{ project.content_rating|div:project.total_raters}} &nbsp; <b>AVG:</b> {{ project.design_rating|add:project.usability_rating|add:project.content_rating}}
+                                {% endif %}
+                            </span>
+                    </div>
                 </div>
             </div>
         </div>

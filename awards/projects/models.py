@@ -46,6 +46,7 @@ class Project(models.Model):
     design_rating = models.IntegerField(default=0)
     usability_rating = models.IntegerField(default=0)
     content_rating = models.IntegerField(default=0)
+    total_raters = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
