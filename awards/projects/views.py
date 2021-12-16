@@ -103,3 +103,15 @@ class SearchProject(View):
         projects = Project.filter(name__icontains=search_str) | Project.filter(design_rating__icontains=search_str) | Project.filter(usability_rating__icontains=search_str) | Project.filter(profile__full_name__icontains=search_str) 
         data = projects.values()
         return JsonResponse(list(data),safe=False)
+####PROFILE API
+class ProfileAPIView(View):
+    def get(self,request):
+        profile = Profile.objects.all()
+        profiles = [{"name":profile.full_name,"email":profile.email,"username":profile.username,"bio":profile,"bio":profile.bio} for profile in profile]
+        return JsonResponse(profiles,safe=False)
+####PROJECTS API
+class ProjectsAPIView(View):
+    def get(self,request):
+        projects = Project.objects.all()
+        project_list = [{"image":project.image.url,"name":project.name,"description":project.description,"link":project.link,"created_date":project.created_date,"updated_date":project.updated_date,"design_rating":project.design_rating,"content_rating":project.content_rating,"total_raters":project.total_raters} for project in projects]
+        return JsonResponse(project_list,safe=False)

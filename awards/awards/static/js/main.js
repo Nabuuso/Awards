@@ -46,7 +46,7 @@ $(document).ready(function(){
         data.append("link",$("#link").val())
         $.ajax({
             method:'POST',
-            url:'projects',
+            url:'project-list',
             data:data,
             processData:false,
             contentType:false,
