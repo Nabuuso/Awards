@@ -32,7 +32,7 @@ This web-app allows a user to create a Profile of Projects that are all under hi
 
 - Terminal
 
-Link:-> ```https://github.com/Nabuuso/Betty-sgallery/
+Link:-> ```https://github.com/Nabuuso/Awards/
 
 5. **Clone** the project.
 
