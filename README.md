@@ -4,7 +4,7 @@
 
 The Awarda app allows a user to create a Profile of Projects that are all under his username allowing other users to vote for them and visit his or her projects.
 
-## User Story
+## User Stories
 
 * View posted projects and their details
 * Post a project to be rated/reviewed
