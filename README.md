@@ -15,7 +15,6 @@ The Awarda app allows a user to create a Profile of Projects that are all under 
 
 
 # **SETUP/INSTALLATION.**
-## Prerequisites
 Install the following; 
 
 - Python3.8
