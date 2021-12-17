@@ -31,15 +31,15 @@ Install the following;
 
 Link https://github.com/Nabuuso/Awards/
 
-5. **Clone** the project.
+* **Clone** the project.
 
-6. Once you done with cloning and project is on your device.
+* Once you done with cloning and project is on your device.
 
-7. get into project folder (cd into project).
+* get into project folder (cd into project).
 
-8. Install Django and other Modules
+* Install Django and other Modules
 
-* $ python3 manage.py runserver
+* python3 manage.py runserver
 
 # Known Bugs
 Submit button moves to the side when a user with a long username logs in.
