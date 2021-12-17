@@ -2,7 +2,7 @@
 
 # DESCRIPTION
 
-This web-app allows a user to create a Profile of Projects that are all under his username allowing other users to vote for them and visit his or her projects.
+The Awarda app allows a user to create a Profile of Projects that are all under his username allowing other users to vote for them and visit his or her projects.
 
 ## User Story
 
